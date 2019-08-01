@@ -23,12 +23,8 @@ def scrape(url):
     for x in news:
         imp = x.get_text()
         headlines.append(imp)
-    #print(imp)
-    #print(' ')
-
-    for y in links:
-        info = y.get('href')
-
+    
+    
     for num in range(len(headlines)):
 
         comb[num] = headlines[num]
@@ -53,14 +49,14 @@ def sms(talk):
     """
     # Your Account Sid and Auth Token from twilio.com/console
     # DANGER! This is insecure. See http://twil.io/secure
-    account_sid = 'AC5d5e141a40cd1ad612f1bbab6524374c'
-    auth_token = '60d557e226be1fd70447ed6ec8697fa8'
+    account_sid = 'get_on_twilio'
+    auth_token = 'get_on_twilio'
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-                                  from_= '+12672142542',
+                                  from_= 'get_on_twilio',
                                   body = talk,
-                                  to = '+14849047054'
+                                  to = 'your_own_number'
                               )
 
     print(message.sid)
